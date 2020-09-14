@@ -5,17 +5,36 @@
  */
 package palabrasclaves.modelos;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author David Acosta
  */
 public class PalabraClave {
     
-    String Nombre;
-  
-    @Override
-    public String toString() {
-        return "PalabraClave{" + "Nombre=" + Nombre + '}';
+    private String nombre;
+    
+    public PalabraClave(String nombre) {
+        this.nombre = nombre;
+    }
+   
+    public void mostrar(PalabraClave palabra){
+        System.out.println(palabra);
+        System.out.println("****************************************");
     }
     
+    @Override
+    public String toString() {
+        return "Palabra Clave: " + nombre;
+    }
+
+    public String verNombre() {
+        return nombre;
+    }
+
+    public void asignarNombre(String nombre) {
+        this.nombre = nombre;
+    }
+     
 }

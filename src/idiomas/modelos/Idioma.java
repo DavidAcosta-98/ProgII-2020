@@ -10,12 +10,28 @@ package idiomas.modelos;
  * @author David Acosta
  */
 public class Idioma {
-    String nombre;
+    private String nombre;
 
+    public Idioma(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void mostrar (Idioma unIdioma){
+        System.out.println(unIdioma);
+        System.out.println("****************************************");
+    }
+    
     @Override
     public String toString() {
         return "Idioma: " + nombre;
     }
-    
+
+    public String verNombre() {
+        return nombre;
+    }
+
+    public void asignarNombre(String nombre) {
+        this.nombre = nombre;
+    }
     
 }

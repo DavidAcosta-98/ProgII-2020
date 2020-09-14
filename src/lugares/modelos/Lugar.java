@@ -11,10 +11,28 @@ package lugares.modelos;
  */
 public class Lugar {
     
-    String nombre;
+    private String nombre;
 
+    public Lugar(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void mostrar(Lugar unLugar){
+        System.out.println(unLugar);
+        System.out.println("****************************************");
+    }
+    
     @Override
     public String toString() {
-        return "Lugar{" + "nombre=" + nombre + '}';
+        return "Lugar: " + nombre;
     }
+
+    public String verNombre() {
+        return nombre;
+    }
+
+    public void asignarNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
 }

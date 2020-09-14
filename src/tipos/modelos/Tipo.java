@@ -11,4 +11,28 @@ package tipos.modelos;
  */
 public class Tipo {
     
+    private String nombre;
+
+    public Tipo(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void mostrar(Tipo unTipo){
+        System.out.println(unTipo);
+        System.out.println("****************************************");
+    }
+    
+    @Override
+    public String toString() {
+        return "Tipo: " + nombre;
+    }
+
+    public String verNombre() {
+        return nombre;
+    }
+
+    public void asignarNombre(String nombre) {
+        this.nombre = nombre;
+    }
+ 
 }
