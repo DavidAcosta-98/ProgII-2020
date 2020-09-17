@@ -5,14 +5,13 @@
  */
 package principal.controladores;
 
-import autores.modelos.Alumno;
-import autores.modelos.Profesor;
-import grupos.modelos.Grupo;
-import idiomas.modelos.Idioma;
-import java.util.ArrayList;
-import lugares.modelos.Lugar;
-import palabrasclaves.modelos.PalabraClave;
-import tipos.modelos.Tipo;
+import autores.vistas.VentanaAMAlumno;
+import autores.vistas.VentanaAMProfesor;
+import grupos.vistas.VentanaAMGrupo;
+import idiomas.vistas.VentanaAIdioma;
+import lugares.vistas.VentanaALugar;
+import palabrasclaves.vistas.VentanaAPalabraClave;
+import tipos.vistas.VentanaATipo;
 
 /**
  *
@@ -134,7 +133,34 @@ public class ControladorPrincipal {
 //        
 //        for (Grupo unGrupo : grupos)
 //            unGrupo.mostrar();
-            
+        
+        VentanaAMAlumno ventanaAlum = new VentanaAMAlumno(null);
+        ventanaAlum.setLocationRelativeTo(null);
+        ventanaAlum.setVisible(true);
+        
+        VentanaAMProfesor ventanaProf = new VentanaAMProfesor(null);
+        ventanaProf.setLocationRelativeTo(null);
+        ventanaProf.setVisible(true);
+        
+        VentanaAMGrupo ventanaGrup = new VentanaAMGrupo (null);
+        ventanaGrup.setLocationRelativeTo(null);
+        ventanaGrup.setVisible(true);
+        
+        VentanaAIdioma ventanaIdioma = new VentanaAIdioma (null);
+        ventanaIdioma.setLocationRelativeTo(null);
+        ventanaIdioma.setVisible(true);
+        
+        VentanaALugar ventanaLu = new VentanaALugar (null);
+        ventanaLu.setLocationRelativeTo(null);
+        ventanaLu.setVisible(true);
+        
+        VentanaAPalabraClave ventanaPalab = new VentanaAPalabraClave (null);
+        ventanaPalab.setLocationRelativeTo(null);
+        ventanaPalab.setVisible(true);
+        
+        VentanaATipo ventanaTipo = new VentanaATipo (null);
+        ventanaTipo.setLocationRelativeTo(null);
+        ventanaTipo.setVisible(true);
     }
 
 }
