@@ -5,6 +5,9 @@
  */
 package autores.modelos;
 
+import grupos.modelos.MiembroEnGrupo;
+import java.util.ArrayList;
+
 /**
  *
  * @author David Acosta
@@ -15,13 +18,18 @@ public class Profesor {
     private String nombres;
     private String clave;
     private String codigo;
+    private Cargo cargos;
+    ArrayList <MiembroEnGrupo> miembros = new ArrayList<>();
 
-    public Profesor(int dni, String apellidos, String nombres, String clave, String codigo) {
+    // Verificar que "Codigo" este en el controlador principal.
+    
+    public Profesor(int dni, String apellidos, String nombres, String clave, Cargo cargos) {
         this.dni = dni;
         this.apellidos = apellidos;
         this.nombres = nombres;
         this.clave = clave;
-        this.codigo = codigo;
+        //this.codigo = codigo;
+        this.cargos = cargos;
     }
     
     public void mostrar(){
@@ -31,9 +39,19 @@ public class Profesor {
         System.out.println("Nombres: " + nombres);
         System.out.println("Clave: " + clave);
         System.out.println("Codigo: " + codigo);
+        System.out.println("Cargo: " + cargos);
         System.out.println("****************************************");
     }    
 
+    //Probar si es que tienen sentido 
+    public Cargo verCargos() {
+        return cargos;
+    }
+
+    public void asignarCargos(Cargo cargos) {
+        this.cargos = cargos;
+    }
+ 
     public int verDni() {
         return dni;
     }
@@ -73,4 +91,5 @@ public class Profesor {
     public void asignarCodigo(String codigo) {
         this.codigo = codigo;
     }
+    
 }

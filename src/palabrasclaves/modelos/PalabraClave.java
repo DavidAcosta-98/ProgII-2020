@@ -19,9 +19,13 @@ public class PalabraClave {
         this.nombre = nombre;
     }
    
-    public void mostrar(PalabraClave palabra){
-        System.out.println(palabra);
-        System.out.println("****************************************");
+//    public void mostrar(PalabraClave palabra){
+//        System.out.println(palabra);
+//        System.out.println("****************************************");
+//    }
+    
+    public void mostrar(){
+        System.out.println(this.nombre);
     }
     
     @Override

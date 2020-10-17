@@ -41,7 +41,7 @@ public class VentanaAMProfesor extends JDialog {
         txtDNI = new javax.swing.JTextField();
         passClave = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
-        txtCargo = new javax.swing.JTextField();
+        jComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Profesores");
@@ -72,7 +72,12 @@ public class VentanaAMProfesor extends JDialog {
 
         jLabel6.setText("Clave:");
 
-        txtCargo.setToolTipText("Nombres del profesor");
+        jComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,7 +99,9 @@ public class VentanaAMProfesor extends JDialog {
                             .addComponent(txtDNI)
                             .addComponent(txtApellidos)
                             .addComponent(passClave)
-                            .addComponent(txtCargo)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnGuardar)))
@@ -118,7 +125,7 @@ public class VentanaAMProfesor extends JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(passClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -145,9 +152,14 @@ public class VentanaAMProfesor extends JDialog {
             p.mostrar();
     }//GEN-LAST:event_btnGuardarClic
 
+    private void jComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxActionPerformed
+        
+    }//GEN-LAST:event_jComboBoxActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JComboBox<String> jComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -155,7 +167,6 @@ public class VentanaAMProfesor extends JDialog {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPasswordField passClave;
     private javax.swing.JTextField txtApellidos;
-    private javax.swing.JTextField txtCargo;
     private javax.swing.JTextField txtDNI;
     private javax.swing.JTextField txtNombres;
     // End of variables declaration//GEN-END:variables
