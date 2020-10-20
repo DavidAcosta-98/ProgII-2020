@@ -93,7 +93,7 @@ public class VentanaAPalabraClave extends JDialog {
         palabrasClaves.add(palabra);
         
         for(PalabraClave p : palabrasClaves)
-            p.mostrar(p);
+            p.mostrar();
         
     }//GEN-LAST:event_btnGuardarClic
 

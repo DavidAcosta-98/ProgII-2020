@@ -9,6 +9,7 @@ import grupos.modelos.MiembroEnGrupo;
 import idiomas.modelos.Idioma;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Objects;
 import lugares.modelos.Lugar;
 import palabrasclaves.modelos.PalabraClave;
 import tipos.modelos.Tipo;
@@ -29,7 +30,7 @@ public class Publicacion {
     private Tipo unTipo;
     private MiembroEnGrupo miembro;
 
-    public Publicacion(String titulo, LocalDate fechaPublicacion, String enlace, String resumen, Lugar unLugar, Idioma unIdioma, Tipo unTipo, MiembroEnGrupo miembro) {
+    public Publicacion(String titulo, MiembroEnGrupo miembro, LocalDate fechaPublicacion, Tipo unTipo, Idioma unIdioma, Lugar unLugar,ArrayList<PalabraClave> palabrasClave, String enlace, String resumen) {
         this.titulo = titulo;
         this.fechaPublicacion = fechaPublicacion;
         this.enlace = enlace;
@@ -40,7 +41,7 @@ public class Publicacion {
         this.miembro = miembro;
     }
 
-    void mostrar(){
+    public void mostrar(){
         System.out.println("Título: " + titulo);
         System.out.println("Autor: " + miembro.getUnProfesor().verApellidos() + ", " + miembro.getUnProfesor().verNombres());
         System.out.println("Grupo: " + miembro.getUnGrupo().verNombre());
@@ -128,6 +129,31 @@ public class Publicacion {
 
     public void setMiembro(MiembroEnGrupo miembro) {
         this.miembro = miembro;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 61 * hash + Objects.hashCode(this.titulo);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Publicacion other = (Publicacion) obj;
+        if (!Objects.equals(this.titulo, other.titulo)) {
+            return false;
+        }
+        return true;
     }
     
     
